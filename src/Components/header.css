@@ -1,0 +1,10 @@
+.header{
+
+    height: 50px;
+    background: grey;
+    display: flex;
+    width: inherit;
+    align-items: center;
+    justify-content: center;
+
+}

@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './Components/Header';
+import MovieCard from './Components/MovieCard';
 
 function App() {
+
+  const user = {
+    name:"Alex",
+    age:22
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <Header user={user}/>
+
+      <div className='movieContainer'>
+
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      </div>
+
+    </>
+ 
   );
 }
 
