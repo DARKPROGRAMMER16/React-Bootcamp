@@ -1,16 +1,21 @@
-import React from 'react'
-import './movie.css'
+import React from "react";
+import "./movie.css";
 
 const MovieCard = () => {
   return (
-    <div className='card'>
-        <div className='movie-img'>
-            <img src='https://www.hindustantimes.com/ht-img/img/2024/04/27/550x309/kalki_1714219826036_1714219826326.jpg'/>
-        </div>
-        <h4>Movie name</h4>
-        <p>Ratings : 5&#9734;</p>
+    <div class="card">
+      <div class="card__image-container">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy48LdLyh7RDkJSL5WzU0gCzEypy8BEmGadA&s"
+          alt="img"
+        />
+      </div>
+      <div class="card__content">
+        <h3>Kalki</h3>
+        <p class="techs">Rating : 5&#9734;</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MovieCard
+export default MovieCard;

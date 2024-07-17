@@ -1,16 +1,45 @@
-.card{
-    background: cyan;
-    width: 200px;
-    height: 300px;
 
+
+  
+  .card {
+    width: 20rem;
+    margin:  1rem;
+    grid-column-end: span 4;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    background-color: #eeeef3;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .card:hover {
+    transform: translateY(-7px);
+  }
+  
+  .card__image-container {
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card__image-container img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
+
+.card__content .techs{
+    font-size: 16px;
+    color: #464545;
 }
 
-.movie-img > img{
-    object-fit: contain;
-    width: 180px;
-    height: 280px;
-}

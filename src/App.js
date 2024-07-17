@@ -1,30 +1,23 @@
-
-import './App.css';
-import Header from './Components/Header';
-import MovieCard from './Components/MovieCard';
+import { useState } from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import Movies from "./Components/Movies";
+import Login from "./Components/Login";
 
 function App() {
 
-  const user = {
-    name:"Alex",
-    age:22
-  }
+  const [userName, setUserName] = useState("");
 
   return (
-    <>
+    <div className="app">
+      <Header user={userName} username={userName} handleLogout={setUserName}/>
 
-      <Header user={user}/>
 
-      <div className='movieContainer'>
+      
 
-      <MovieCard/>
-      <MovieCard/>
-      <MovieCard/>
-      <MovieCard/>
-      </div>
 
-    </>
- 
+      {userName ? <Movies /> : <Login  handleLogin={setUserName}/>}
+    </div>
   );
 }
 
