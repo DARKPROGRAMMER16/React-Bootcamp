@@ -2,10 +2,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'roboto', arial;
+
 }
 
 .app{
-    height: 100vh;
-    background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
-    background-repeat: no-repeat;
+
+
+    
 }

@@ -5,3 +5,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.searchbar{
+    margin: 1rem;
+}

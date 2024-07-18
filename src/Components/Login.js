@@ -16,14 +16,14 @@ const Login = (props) => {
             setInput(e.target.value);
           }}
         />
-        <button+
+        <button
           onClick={(e) => {
             handleLogin(input);
             setInput("");
           }}
         >
           Enter as {input}
-        </button+>
+        </button>
       </div>
     </>
   );
