@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.css";
+import { DataContext } from "../DataProvider";
 
 const Header = (parameters) => {
   const { handleLogout, username } = parameters;
+
+  const { newUserName, setNewUserName } = useContext(DataContext);
 
   return (
     <div className="header">
@@ -10,9 +13,9 @@ const Header = (parameters) => {
         <h1>Movies JOY</h1>
       </div>
       <div className="user">
-        <h3>{parameters.user}</h3>
-        {username ? (
-          <button onClick={() => handleLogout("")}>logout</button>
+        <h3>{newUserName}</h3>
+        {newUserName ? (
+          <button onClick={() => setNewUserName("")}>logout</button>
         ) : (
           <></>
         )}

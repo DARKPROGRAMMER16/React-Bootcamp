@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./login.css";
+import { DataContext } from "../DataProvider";
 
 const Login = (props) => {
   const { handleLogin } = props;
+
+  const { setNewUserName } = useContext(DataContext);
 
   const [input, setInput] = useState("");
 
@@ -18,7 +21,7 @@ const Login = (props) => {
         />
         <button
           onClick={(e) => {
-            handleLogin(input);
+            setNewUserName(input);
             setInput("");
           }}
         >

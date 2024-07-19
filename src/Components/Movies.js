@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import "./movies.css";
+import { DataContext } from "../DataProvider";
 
 const Movies = () => {
+  const { newMovies, setNewMovies } = useContext(DataContext);
+
   const [movies, setMovies] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
 
@@ -17,8 +20,14 @@ const Movies = () => {
     );
     const data = await response.json();
     console.log({ data });
-    if (data.Response === "True") setMovies(data.Search);
-    if (data.Response === "False") setMovies([]);
+    if (data.Response === "True") {
+      setMovies(data.Search);
+      setNewMovies(data.Search);
+    }
+    if (data.Response === "False") {
+      setMovies([]);
+      setNewMovies([]);
+    }
   };
 
   useEffect(() => {
@@ -37,9 +46,9 @@ const Movies = () => {
         />
         {/* <button onClick={fetchMovies}>Fetch movies</button> */}
       </div>
-      {movies.length || !searchMovie ? (
+      {newMovies.length || !searchMovie ? (
         <div className="movieContainer">
-          {movies.map((movie, index) => {
+          {newMovies.map((movie) => {
             return (
               <MovieCard
                 movieTitle={movie.Title}
